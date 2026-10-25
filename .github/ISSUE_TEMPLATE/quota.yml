@@ -1,0 +1,63 @@
+name: Domain quota request
+description: Ask for extra domain slots
+title: "[Quota] "
+labels: ["quota"]
+body:
+  - type: input
+    id: username
+    attributes:
+      label: Registry username
+      placeholder: your vc.ci username
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Account e-mail
+      placeholder: the address you signed up with
+    validations:
+      required: true
+
+  - type: input
+    id: current
+    attributes:
+      label: Current quota
+      placeholder: "1"
+
+  - type: input
+    id: requested
+    attributes:
+      label: Requested quota
+      placeholder: "3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why do you need more domain slots?
+      description: Explain what the extra names are for and why the current quota is not enough.
+      placeholder: |
+        Example:
+        I run three separate projects (blog, API, mail) and each needs its own name.
+        One slot is not enough because they are unrelated and I want to keep them separate.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else we should know? (optional)
+      description: Links to the projects, expected traffic, whether the names are for a company or personal use.
+      placeholder: Optional.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement
+      options:
+        - label: I agree to the acceptable use rules.
+          required: true
